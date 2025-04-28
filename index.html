@@ -3,200 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DesiJayka - Search Recipes</title>
-    <link rel="stylesheet" href="style.css"> <!-- Your CSS file -->
-    <style>
-        /* Simple and clean CSS for the search bar */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #ff7f50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .search-container {
-            margin-top: 10px;
-        }
-
-        .search-container input {
-            padding: 10px;
-            width: 70%;
-            max-width: 400px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-        }
-
-        .search-container button {
-            padding: 10px;
-            background-color: #3498db;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .search-container button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Recipes section */
-        #recipesContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .recipe-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            margin: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .recipe-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .recipe-card h3 {
-            padding: 10px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .recipe-card button {
-            padding: 10px;
-            width: 100%;
-            background-color: #3498db;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 0 0 10px 10px;
-        }
-
-        .recipe-card button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Loader */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-        }
-
-        .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            padding-top: 50px;
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-
-        .close-modal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-modal:hover,
-        .close-modal:focus {
-            color: black;
-            text-decoration: none;
-        }
-    </style>
+    <title>DesiZaayka - Authentic Indian Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Spice+Heart&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header with logo and search bar -->
-    <header>
-        <div class="logo">DesiJayka</div>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search recipes..." />
-            <button id="searchButton">Search</button>
-        </div>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">DesiZaayka</div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#popular">Popular</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Recipes Section -->
     <main>
-        <section id="recipesContainer" class="recipes-container">
-            <!-- Recipes will be dynamically displayed here -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Discover the Magic of Indian Cuisine</h1>
+                <p>Explore authentic recipes from every corner of India</p>
+                <a href="#recipes" class="cta-button">Explore Recipes</a>
+            </div>
+        </section>
+
+        <section id="categories" class="categories">
+            <h2>Recipe Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" alt="North Indian">
+                    <h3>North Indian</h3>
+                    <p>Rich, creamy curries and tandoor specialties</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" alt="South Indian">
+                    <h3>South Indian</h3>
+                    <p>Dosas, idlis, and flavorful sambars</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg" alt="Street Food">
+                    <h3>Street Food</h3>
+                    <p>Chaats, pakoras, and quick bites</p>
+                </div>
+                <div class="category-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Desserts.jpg/1200px-Desserts.jpg" alt="Desserts">
+                    <h3>Desserts</h3>
+                    <p>Sweet treats and traditional mithai</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="featured">
+            <h2>Today's Special</h2>
+            <div class="recipe-card featured-recipe">
+                <img src="https://ichef.bbci.co.uk/images/ic/480xn/p0j0090y.jpg.webp" alt="Butter Chicken">
+                <div class="recipe-content">
+                    <h3>Butter Chicken</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 mins</span>
+                        <span>Cook: 45 mins</span>
+                        <span>Serves: 4</span>
+                    </div>
+                    <p>Creamy, rich, and mildly spiced chicken curry that's loved worldwide</p>
+                    <button class="view-recipe" data-recipe="butter-chicken">View Recipe</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="popular" class="popular">
+            <h2>Popular Recipes</h2>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <img src="https://static.wixstatic.com/media/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg/v1/fill/w_666,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg" alt="Biryani">
+                    <div class="recipe-content">
+                        <h3>Hyderabadi Biryani</h3>
+                        <p>Aromatic rice layered with spiced meat</p>
+                        <button class="view-recipe" data-recipe="biryani">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" alt="Paneer Tikka">
+                    <div class="recipe-content">
+                        <h3>Paneer Tikka</h3>
+                        <p>Grilled cottage cheese with spices</p>
+                        <button class="view-recipe" data-recipe="paneer-tikka">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__700_0_0_0_auto.jpg" alt="Masala Dosa">
+                    <div class="recipe-content">
+                        <h3>Masala Dosa</h3>
+                        <p>Crispy crepe with spiced potato filling</p>
+                        <button class="view-recipe" data-recipe="masala-dosa">View Recipe</button>
+                    </div>
+                </div>
+              <div class="recipe-card">
+                    <img src="https://shwetainthekitchen.com/wp-content/uploads/2022/01/Idli-Sambar.jpg" alt="Idli Sambar">
+                    <div class="recipe-content">
+                        <h3>Idli Sambar</h3>
+                        <p>Soft steamed rice cakes served with spicy, tangy lentil soup – a South Indian classic.</p>
+                        <button class="view-recipe" data-recipe="idli-sambar">View Recipe</button>
+                    </div>
+                </div>
+              <div class="recipe-card">
+                    <img src="https://www.kannammacooks.com/wp-content/uploads/air-fryer-chicken-65-recipe-1-5.jpg" alt="Chicken 65">
+                    <div class="recipe-content">
+                        <h3>Chicken 65</h3>
+                        <p>Fiery, crispy South Indian fried chicken with bold flavors and a zesty kick.</p>
+                        <button class="view-recipe" data-recipe="chicken-65">View Recipe</button>
+                    </div>
+                </div>
+              <div class="recipe-card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2020/08/aloo-paratha-recipe-500x500.jpg" alt="Aloo Paratha">
+                    <div class="recipe-content">
+                        <h3>Aloo Paratha</h3>
+                        <p>Stuffed wheat flatbread with spiced mashed potatoes – the heart of North Indian breakfasts.</p>
+                        <button class="view-recipe" data-recipe="aloo-paratha">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="subscribe" class="subscribe">
+            <div class="subscribe-content">
+                <h2>Get Daily Recipe Updates</h2>
+                <p>Subscribe to our newsletter for new recipes, cooking tips, and special offers</p>
+                <form id="subscribeForm" class="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <!-- Loader Spinner -->
-    <div id="loader" class="loader" style="display: none;">
-        <div class="spinner"></div>
-    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DesiZaayka</h3>
+                <p>Bringing the authentic taste of India to your kitchen</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Categories</h3>
+                <ul>
+                    <li><a href="#north-indian">North Indian</a></li>
+                    <li><a href="#south-indian">South Indian</a></li>
+                    <li><a href="#street-food">Street Food</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: mohdshadabdev@gmail.com</p>
+                <p>Follow us on social media</p>
+                <a href="https://www.linkedin.com/in/mohdshadabdev" target="_blank">
+                    <img src="https://pngimg.com/d/linkedIn_PNG27.png" alt="LinkedIn" width="30" height="30">
+                </a>
+                <a href="https://github.com/mohdshadabdev" target="_blank">
+                    <img src="https://avatars1.githubusercontent.com/u/9919?v=4" alt="GitHub" width="30" height="30">
+                </a>
+                <a href="https://www.instagram.com/shadab_miya" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" width="30" height="30">
+                </a>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DesiZaayka. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Recipe Modal -->
     <div id="recipeModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <div id="recipeDetails">
-                <!-- Recipe details will be dynamically inserted here -->
-            </div>
+            <div id="recipeDetails"></div>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- External JS file -->
-
+    <script src="script.js"></script>
 </body>
 </html>
